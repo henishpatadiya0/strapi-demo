@@ -1,7 +1,7 @@
 console.log("> Entry <");
 
-const BASE_URL = "https://strapi-demo-zc1z.onrender.com"
-// const BASE_URL = "http://localhost:1337"
+// const BASE_URL = "https://strapi-demo-zc1z.onrender.com"
+const BASE_URL = "http://localhost:1337"
 
 async function fetchProducts() {
     try {
