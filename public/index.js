@@ -1,8 +1,11 @@
 console.log("> Entry <");
 
+const BASE_URL = "https://strapi-demo-zc1z.onrender.com"
+// const BASE_URL = "http://localhost:1337"
+
 async function fetchProducts() {
     try {
-        const response = await fetch('http://localhost:1337/api/products?populate=*');
+        const response = await fetch(`${BASE_URL}/api/products?populate=*`);
         const data = await response.json();
 
         const products = data.data;
@@ -17,7 +20,7 @@ async function fetchProducts() {
             // Create the image element
             const imgElement = document.createElement('img');
             imgElement.classList.add('card-img-top');
-            imgElement.src = "http://localhost:1337" + product.image[0]?.url || 'default-image.jpg';
+            imgElement.src = BASE_URL + product.image[0]?.url || 'default-image.jpg';
             imgElement.alt = product.image[0]?.name || 'Product image';
 
             // Create the card body
